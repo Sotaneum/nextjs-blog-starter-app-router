@@ -1,8 +1,11 @@
-import '../styles/index.css';
-import Footer from '@/components/footer';
-import Alert from '@/components/alert';
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '@/lib/constants';
 import Head from 'next/head';
+
+import { CMS_NAME, HOME_OG_IMAGE_URL } from '@/lib/constants';
+
+import Alert from '@/components/alert';
+import Footer from '@/components/footer';
+
+import '../styles/index.css';
 
 export default function RootLayout({
   children,

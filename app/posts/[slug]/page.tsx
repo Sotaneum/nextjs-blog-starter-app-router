@@ -1,10 +1,12 @@
-import { getPostBySlug } from '@/lib/api';
-import markdownToHtml from '@/lib/markdownToHtml';
-import markdownStyles from '@/components/markdown-styles.module.css';
-import Head from 'next/head';
-import PostHeader from '@/components/post-header';
 import React from 'react';
+import Head from 'next/head';
+
+import { getPostBySlug } from '@/lib/api';
 import { CMS_NAME } from '@/lib/constants';
+import markdownToHtml from '@/lib/markdownToHtml';
+
+import PostHeader from '@/components/post-header';
+import markdownStyles from '@/components/markdown-styles.module.css';
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);

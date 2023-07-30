@@ -1,9 +1,11 @@
-import MoreStories from '@/components/more-stories';
-import HeroPost from '@/components/hero-post';
-import Intro from '@/components/intro';
+import Head from 'next/head';
+
 import { getAllPosts } from '@/lib/api';
 import { CMS_NAME } from '@/lib/constants';
-import Head from 'next/head';
+
+import Intro from '@/components/intro';
+import HeroPost from '@/components/hero-post';
+import MoreStories from '@/components/more-stories';
 
 export default async function Page() {
   const allPosts = getAllPosts();

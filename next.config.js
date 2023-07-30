@@ -9,6 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: "/nextjs-blog-starter-app-router"
 }
 
 module.exports = nextConfig

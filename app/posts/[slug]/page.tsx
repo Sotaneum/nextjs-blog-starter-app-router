@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { getPostBySlug } from '@/lib/api';
-import { CMS_NAME } from '@/lib/constants';
+import {getPostBySlug} from '@/lib/api';
+import {CMS_NAME} from '@/lib/constants';
 import markdownToHtml from '@/lib/markdownToHtml';
 
 import PostHeader from '@/components/post-header';

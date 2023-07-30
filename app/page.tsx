@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import { getAllPosts } from '@/lib/api';
-import { CMS_NAME } from '@/lib/constants';
+import {getAllPosts} from '@/lib/api';
+import {CMS_NAME} from '@/lib/constants';
 
 import Intro from '@/components/intro';
 import HeroPost from '@/components/hero-post';

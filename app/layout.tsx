@@ -1,6 +1,7 @@
+import {ReactNode} from "react";
 import Head from 'next/head';
 
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '@/lib/constants';
+import {CMS_NAME, HOME_OG_IMAGE_URL} from '@/lib/constants';
 
 import Alert from '@/components/alert';
 import Footer from '@/components/footer';
@@ -10,7 +11,7 @@ import '../styles/index.css';
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">

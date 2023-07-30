@@ -8,7 +8,7 @@ import HeroPost from '@/components/hero-post';
 import MoreStories from '@/components/more-stories';
 
 export default async function Page() {
-  const allPosts = getAllPosts();
+  const allPosts = await getAllPosts();
 
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);

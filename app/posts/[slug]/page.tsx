@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import {getPostBySlug} from '@/lib/api';
+import {getPostBySlug, getPostSlugs} from '@/lib/api';
 import {CMS_NAME} from '@/lib/constants';
 import markdownToHtml from '@/lib/markdownToHtml';
 
@@ -9,7 +9,8 @@ import PostHeader from '@/components/post-header';
 import markdownStyles from '@/components/markdown-styles.module.css';
 
 export default async function Post({ params }) {
-  const post = getPostBySlug(params.slug);
+  console.log(params)
+  const post = await getPostBySlug(params.slug);
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   const content = await markdownToHtml(post.content || '');
 
@@ -34,3 +35,10 @@ export default async function Post({ params }) {
     </article>
   );
 }
+
+export async function generateStaticParams() {
+  console.log(getPostSlugs())
+  return getPostSlugs();
+}
+
+export const dynamicParams = false;

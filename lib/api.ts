@@ -6,12 +6,11 @@ import PostType from '@/interfaces/post';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getPostSlugs() {
+  return fs.readdirSync(postsDirectory).map((slug)=>slug.replace(/\.md$/, ''));
 }
 
-export function getPostBySlug(slug: string): PostType {
-  const realSlug = slug.replace(/\.md$/, '');
+export async function getPostBySlug(realSlug: string): Promise<PostType> {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
@@ -30,9 +29,10 @@ export function getPostBySlug(slug: string): PostType {
 
 export function getAllPosts() {
   return (
-    getPostSlugs()
-      .map((slug) => getPostBySlug(slug))
+    Promise.all(getPostSlugs()
+      .map((slug) => getPostBySlug(slug)))
       // sort posts by date in descending order
-      .sort((a, b) => (a.date > b.date ? -1 : 1))
+      .then((posts)=>posts
+        .sort((a, b) => (a.date > b.date ? -1 : 1)))
   );
 }

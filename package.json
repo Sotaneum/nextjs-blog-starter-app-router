@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "prestart": "npm run build",
+    "start": "npx serve@latest out",
     "typecheck": "tsc"
   },
   "dependencies": {

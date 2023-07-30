@@ -10,7 +10,7 @@ export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   const content = await markdownToHtml(post.content || '');
-  console.log(post.author);
+
   return (
     <article className="mb-32">
       <Head>

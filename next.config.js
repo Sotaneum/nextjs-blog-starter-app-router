@@ -9,7 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/nextjs-blog-starter-app-router"
+  basePath: process.env.CI === 'true' ? "/nextjs-blog-starter-app-router" : ""
 }
 
 module.exports = nextConfig

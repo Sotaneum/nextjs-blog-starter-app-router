@@ -9,7 +9,6 @@ import PostHeader from '@/components/post-header';
 import markdownStyles from '@/components/markdown-styles.module.css';
 
 export default async function Post({ params }) {
-  console.log(params)
   const post = await getPostBySlug(params.slug);
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   const content = await markdownToHtml(post.content || '');

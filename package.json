@@ -2,9 +2,10 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "prestart": "npm run build",
     "start": "npx serve@latest out",
+    "build:pages": "CI=true npm run build",
     "typecheck": "tsc"
   },
   "dependencies": {

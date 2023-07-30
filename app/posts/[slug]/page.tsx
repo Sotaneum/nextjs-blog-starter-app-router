@@ -37,8 +37,5 @@ export default async function Post({ params }) {
 }
 
 export async function generateStaticParams() {
-  console.log(getPostSlugs())
-  return getPostSlugs();
+  return getPostSlugs().map((slug)=>({slug}));
 }
-
-export const dynamicParams = false;
